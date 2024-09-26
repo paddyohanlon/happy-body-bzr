@@ -18,12 +18,20 @@ watch(getBaseDBWeight, (newVal) => {
 function handleUpdateUserSubmit(): void {
   store.updateUser({ baseDBWeightKg: updateBaseDBWeight.value });
 }
+
+async function login() {
+  try {
+    await bzr.login();
+  } catch (e: any) {
+    console.log("e.message", e.message);
+  }
+}
 </script>
 
 <template>
   <main>
     <template v-if="!authenticated">
-      <button class="button is-primary" @click="bzr.login">Log in or Sign up</button>
+      <button class="button is-primary" @click="login">Log in or Sign up</button>
     </template>
     <template v-else>
       <h1 class="title is-1">What dumbbells do you need?</h1>

@@ -32,7 +32,7 @@ function handleUpdateUserSubmit(): void {
     <h1 class="title is-1">Profile</h1>
 
     <div v-if="!updateUser.goalBodyWeightKg" class="notification is-info mb-4">
-      Fill in your ideal weight so to calculate your progress as you add measurements.
+      Fill in your ideal weight to calculate your progress as you add measurements.
     </div>
 
     <div class="card mb-4">
